@@ -14,14 +14,14 @@ Before touching the cloud, the code needs to be written and securely stored.
 
 I designed a clean, dark-themed HTML/CSS page using Tailwind CSS to showcase my DevOps milestones. The code was structured locally using VS Code.
 
-![VS Code Development](<assets/Screenshot%20(529).jpg>)
+![VS Code Development](<assets/Screenshot%20(529).png>)
 _Development: Writing the HTML and inline Tailwind CSS logic in VS Code._
 
 ### 2. Local Testing
 
 Before pushing to production, I utilized a local Live Server to ensure the styling and responsiveness were rendering correctly.
 
-![Local Server Test](<assets/Screenshot%20(530).jpg>)
+![Local Server Test](<assets/Screenshot%20(530).png>)
 _Testing: Verifying the UI on `127.0.0.1:5500` before cloud deployment._
 
 ### 3. Pushing to GitHub
@@ -47,7 +47,7 @@ With the code safe in version control, I moved to the AWS Console to build the s
 
 I navigated to the AWS Management Console and accessed the EC2 Dashboard in the `us-east-1` (N. Virginia) region.
 
-![AWS Console](<assets/Screenshot%20(537).jpg>)
+![AWS Console](<assets/Screenshot%20(537).png>)
 _AWS: Entering the EC2 Dashboard from the main console._
 
 ### 2. Configuring the Instance & Storage
@@ -57,21 +57,21 @@ I selected the industry-standard **Amazon Linux 2023 AMI** to utilize the `yum` 
 - **Instance Type:** `t2.micro` (Free Tier Eligible)
 - **Storage:** Provisioned an 8 GiB `gp3` root volume for optimal baseline performance.
 
-![EC2 Storage Configuration](<assets/Screenshot%20(542).jpg>)
+![EC2 Storage Configuration](<assets/Screenshot%20(542).png>)
 _Storage: Configuring the 8 GiB General Purpose SSD (gp3)._
 
 ### 3. Network Security Groups
 
 Security is paramount. I configured the Security Group to allow **SSH (Port 22)** for administrative access and explicitly allowed **HTTP (Port 80)** traffic so the website can be accessed from the internet.
 
-![EC2 Network Settings](<assets/Screenshot%20(541).jpg>)
+![EC2 Network Settings](<assets/Screenshot%20(541).png>)
 _Networking: Ensuring inbound rules permit HTTP traffic from anywhere._
 
 ### 4. Launch & Verification
 
 After assigning my `linux-for-devops-key` key pair, I launched the instance and verified its "Running" state, noting down the newly assigned Public IPv4 address.
 
-![EC2 Instance Running](<assets/Screenshot%20(544).jpg>)
+![EC2 Instance Running](<assets/Screenshot%20(544).png>)
 _Dashboard: The instance is active and ready for connection at `44.221.44.198`._
 
 ---
@@ -84,7 +84,7 @@ This is where Linux administration comes into play. I connected to the server to
 
 Using Git Bash, I secured my private key (`chmod 400`) and established an SSH connection to the EC2 instance as the `ec2-user`.
 
-![SSH Instructions](<assets/Screenshot%20(545).jpg>)
+![SSH Instructions](<assets/Screenshot%20(545).png>)
 _AWS Connect: Following the official SSH client instructions._
 
 ![SSH Terminal Success](<assets/Screenshot%20(546).png>)
@@ -110,9 +110,7 @@ _Execution: Starting `httpd`, cloning the repo, and moving files to `/var/www/ht
 
 With the files in place and the web server running, I navigated to the EC2 instance's Public IP address in my browser. The deployment was a success!
 
-![Live Website](<assets/Screenshot%20(548).jpg>)
+![Live Website](<assets/Screenshot%20(548).png>)
 _Live: The static portfolio is now publicly accessible on the internet!_
 
 ---
-
-**Soham Sarkar** | _SRE Aspirant | Day 37 Successfully Completed_
